@@ -1,22 +1,21 @@
-from urllib.request import urlopen
+from urllib import urlopen
 import time
 
 #Using Mr. Schlichting's Website as a test
-my_url = 'http://rschlichting.weebly.com/hl-physics-3-4.html'
+myurl = raw_input("Enter URL needs HTTP/HTTPS: ")
 
 #while loop that includes the whole repeating program
-
+sec = raw_input("Interval between checking seconds ie 60 = 1 minute: ")
 while True:
     #check website
-    str1 = urlopen(my_url).read()
+    str1 = urlopen(myurl).read()
     #every second
-    time.sleep(1)
+    time.sleep(float(sec))
     #check it again
-    str2 = urlopen(my_url).read()
+    str2 = urlopen(myurl).read()
 
     if str1 == str2:
-        print("no change")
+        print("No Change")
 
     else:
-        print("change")
-
+        print("There is a disturbance in the dark web...")
