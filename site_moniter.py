@@ -5,10 +5,10 @@ import time
 my_url = 'http://rschlichting.weebly.com/hl-physics-3-4.html'
 
 #while loop that includes the whole repeating program
+#check website
+str1 = urlopen(my_url).read()
 
 while True:
-    #check website
-    str1 = urlopen(my_url).read()
     #every second
     time.sleep(1)
     #check it again
